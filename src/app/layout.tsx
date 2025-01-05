@@ -33,8 +33,10 @@ export default function RootLayout({
     <ClerkProvider publishableKey="pk_test_YW1hemluZy1rb2RpYWstOTYuY2xlcmsuYWNjb3VudHMuZGV2JA">
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}    
+      >
+        
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -47,7 +49,7 @@ export default function RootLayout({
               <Footer />
             </StoreProvider>
           </ThemeProvider>
-        </body>
+        </body  >
       </html>
     </ClerkProvider>
   );

@@ -30,7 +30,7 @@ const Header = () => {
 
         {/* Navigation Menu */}
         <nav className="hidden md:flex space-x-6 font-semibold">
-          <Link href="/" className=" hover:text-pink-300">
+          <Link href="/landing" className=" hover:text-pink-300">
             <span className="flex gap-1 justify-center items-center">
               <House className="text-pink-600 dark:text-white" />
               Home

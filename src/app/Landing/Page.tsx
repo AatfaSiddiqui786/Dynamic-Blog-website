@@ -8,7 +8,9 @@ import { FileText, ShieldQuestion, SquarePen } from "lucide-react";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center px-6 md:px-12">
+    <div className="flex flex-col items-center justify-center px-6 md:px-12"
+        style={{ backgroundImage: 'url("/gif.mp4")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+>
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight ">
           <span className="hover:text-pink-300"> Welcome to my 🚀</span><span className="text-pink-500">Kids Story📖 </span>

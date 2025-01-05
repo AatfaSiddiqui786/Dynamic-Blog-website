@@ -31,9 +31,14 @@ export default function Home() {
       {showWelcome && (
         <div className={styles.welcome}>
           <h2>Welcome to my website</h2>
-          <Link href="/Landing">
-            <button className={styles.button}>Open</button>
-          </Link>
+          <Link 
+        href="/landing"
+        className="px-8 py-3 font-medium text-lg border-2 border-pink-500 rounded-full 
+                 transition-all hover:bg-pink-500 hover:text-white flex items-center gap-2"
+      >
+        <span>Open</span>
+        <span className="text-xl">→</span>
+      </Link>
         </div>
       )}
 
