@@ -1,3 +1,4 @@
+
 "use client";
 
 import { RootState } from "@/app/reduxStore/Store";
@@ -8,7 +9,6 @@ import { SendHorizontal } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { useAppDispatch, useAppSelector } from "@/app/reduxStore/hooks";
 import { addComment, deleteComment } from "@/app/reduxStore/CommentSlice";
-
 const Bloggers = ({ params }: { params: { blog: string } }) => {
   const { user } = useUser();
   const DynamicId = params.blog;

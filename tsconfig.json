@@ -11,8 +11,10 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
+    "jsx": "preserve",
+    "forceConsistentCasingInFileNames": true,
+ 
     "plugins": [
       {
         "name": "next"
