@@ -1,4 +1,3 @@
-
 "use client";
 
 import { RootState } from "@/app/reduxStore/Store";
@@ -9,9 +8,16 @@ import { SendHorizontal } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { useAppDispatch, useAppSelector } from "@/app/reduxStore/hooks";
 import { addComment, deleteComment } from "@/app/reduxStore/CommentSlice";
-const Bloggers = ({ params }: { params: { blog: string } }) => {
+import { useRouter } from "next/router";
+
+const Bloggers = () => {
   const { user } = useUser();
-  const DynamicId = params.blog;
+  const router = useRouter();
+  const { blog } = router.query; // Dynamic ID from the URL
+
+  // Ensure that the blog parameter is available before proceeding
+  const DynamicId = typeof blog === "string" ? blog : null;
+
   const blogs = useAppSelector((state: RootState) => state.blog.blog);
   const SingleBlog = blogs.find((item) => item.id === DynamicId);
 
@@ -20,42 +26,53 @@ const Bloggers = ({ params }: { params: { blog: string } }) => {
   const dispatch = useAppDispatch();
   const comments = useAppSelector((state: RootState) => state.comments.comments);
 
+  // Adding comment
   const handleAddComment = () => {
+    if (!commentVal.trim()) return; // Prevent adding empty comments
+
     const newComment = {
       id: Date.now(),
       text: commentVal,
-      blogId: DynamicId,
+      blogId: DynamicId!,
     };
+
     dispatch(addComment(newComment));
-    setCommentVal("");
+    setCommentVal(""); // Clear comment input
   };
 
+  // Deleting comment
   const handleDeleteComment = (commentId: number) => {
     dispatch(deleteComment(commentId));
   };
 
+  // Ensure SingleBlog is available before rendering
+  if (!SingleBlog) {
+    return <div>Blog not found or loading...</div>;
+  }
+
   return (
     <div className="md:max-w-[50%] w-auto mx-auto text-justify flex flex-col justify-center items-center gap-4 px-4 md:p-0">
-      <h2 className="text-3xl font-bold text-center">{SingleBlog?.title}</h2>
+      <h2 className="text-3xl font-bold text-center">{SingleBlog.title}</h2>
       <Image
-        src={SingleBlog ? SingleBlog.image : ""}
-        alt="image"
+        src={SingleBlog.image || "/default-image.jpg"} // Fallback image
+        alt="Blog Image"
         height={600}
         width={700}
       />
-      <p>{SingleBlog?.description}</p>
+      <p>{SingleBlog.description}</p>
       <div className="self-start">
         <p className="text-2xl font-bold">
           <span className="text-lg font-normal text-gray-600 italic mr-3 dark:text-zinc-400">
             Written By
           </span>
-          {SingleBlog?.author}
+          {SingleBlog.author}
         </p>
         <span className="text-lg font-semibold italic text-gray-700 dark:text-zinc-400">
-          Published On: {SingleBlog?.date}
+          Published On: {SingleBlog.date}
         </span>
       </div>
 
+      {/* Comment Section */}
       <div className="max-w-[100%] mx-auto p-4 border border-gray-300 rounded-md shadow-md min-w-[100%]">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold text-gray-700 dark:text-white">Comments</h2>
@@ -67,6 +84,7 @@ const Bloggers = ({ params }: { params: { blog: string } }) => {
           </div>
         </div>
 
+        {/* Add Comment */}
         <div className="flex justify-center items-center gap-4">
           <input
             type="text"
@@ -84,6 +102,7 @@ const Bloggers = ({ params }: { params: { blog: string } }) => {
           </button>
         </div>
 
+        {/* Display Comments */}
         <ul className="space-y-2 mt-2">
           {comments
             .filter((item) => item.blogId === DynamicId)
