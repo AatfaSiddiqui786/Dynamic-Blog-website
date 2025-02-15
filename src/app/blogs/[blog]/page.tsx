@@ -121,7 +121,7 @@ const Bloggers = () => {
                 </li>
                 <button
                   onClick={() => handleDeleteComment(item.id)}
-                  className="bg-red-500 text-white text-sm px-2 mt-2 py-1 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-200"
+                  className="bg-blue-500 text-white text-sm px-2 mt-2 py-1 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
                 >
                   Remove
                 </button>

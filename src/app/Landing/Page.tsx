@@ -2,9 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import Privacy from "../../components/Privacy";
-import { FileText, ShieldQuestion, SquarePen } from "lucide-react";
-
+import { FileText,SquarePen } from "lucide-react";
+import { HeartPulse } from 'lucide-react';
 
 const LandingPage = () => {
   return (
@@ -13,11 +12,10 @@ const LandingPage = () => {
 >
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight ">
-          <span className="hover:text-pink-300"> Welcome to my 🚀</span><span className="text-pink-500">Kids Story📖 </span>
+         Welcome to<span className="text-blue-500"> <br/>Health & Fitness  blogs <HeartPulse /> </span>
         </h1>
         <p className="mt-4 text-lg md:text-xl">
-          Here you can see the creative ideas,insightful articles and personal kids
-          stories😊.
+        Empowering Your Journey to a Healthier, Stronger You.
         </p>
       </div>
 
@@ -25,55 +23,40 @@ const LandingPage = () => {
 
       <div className="grid gap-6 md:grid-cols-1">
         <div className=" border rounded-lg shadow-lg transition-transform hover:scale-105">
-          <h2 className="text-xl font-semibold">Create Your kids stories Blog</h2>
+          <h2 className="text-xl font-semibold">Write something about health and fitness here.</h2>
           <p className="mt-2">
-          Welcome to your magical world of stories! <span className="inline-block">✨📖</span>  
-    Here, every tale brings an adventure <span className="inline-block">🗺️</span>, a lesson <span className="inline-block">🎓</span>,  
-    and lots of fun <span className="inline-block">🎉</span>. Whether you dream of castles <span className="inline-block">🏰</span>  
-    or talking animals <span className="inline-block">🐾</span>, this is your space to imagine, explore, and learn!  
+          In todays fast-paced world, taking care of our health has never been more important.
+           Health and fitness are not just about looking good; they are about feeling great, boosting energy, and ensuring
+          that we are living our best lives, physically and mentally. Whether it is through regular exercise,
+          balanced nutrition, or focusing on mental well-being, a healthy lifestyle is essential for long-term happiness 
+          and success.
+
+
           </p>
           <button className="mt-4 px-4 py-2 font-medium border rounded-full transition-all hover:bg-opacity-20 hover:bg-pink-400">
             <Link href={"/input"} className="flex justify-center items-center gap-2">
-            <SquarePen className="text-pink-600"/>
-            <span>Create kids stories Blogs</span>
+            <SquarePen className="text-blue-600"/>
+            <span>Share some tips by click here</span>
             </Link>
           </button>
         </div>
 
         <div className=" border rounded-lg shadow-lg transition-transform hover:scale-105">
-          <h2 className="text-xl font-semibold">Latest kids stories Blogs</h2>
+          <h2 className="text-xl font-semibold">Investing in your health today will pay off for years to come</h2>
           <p className="mt-2">
-          Get ready for the latest and most exciting stories! <span className="inline-block">🔥📚</span>  
-    From magical adventures <span className="inline-block">✨🦄</span> to mysterious lands <span className="inline-block">🌍</span>,  
-    there’s always something new to discover! Explore heroes <span className="inline-block">🦸‍♂️</span>  
-    and creatures <span className="inline-block">🐉</span> that make every tale unforgettable. Don’t miss out—start reading now! <span className="inline-block">📖🚀</span>  
+          Ready to take the first step towards a healthier you? Dive into our blog for expert tips and
+           real-life success stories!
           </p>
           <button className="mt-4 px-4 py-2 font-medium border rounded-full transition-all hover:bg-opacity-20 hover:bg-pink-400">
             <Link href="/blogs" className="flex justify-center items-center gap-2">
-            <FileText className="inline text-pink-600"/>
-            <span>Discover stories blog</span>
+            <FileText className="inline text-blue-600"/>
+            <span>Discover Fitness tips by click here</span>
             </Link>
           </button>
         </div>
 
-        <div className=" border rounded-lg shadow-lg transition-transform hover:scale-105">
-          <h2 className="text-xl font-semibold">About KidsBlog</h2>
-          <p className="mt-2">
-          Welcome to a world where stories come alive! <span className="inline-block">🌟📚</span>  
-    Our blog is filled with fun tales <span className="inline-block">🎉</span>, exciting characters <span className="inline-block">🦸‍♀️</span>,  
-    and adventures that teach valuable lessons <span className="inline-block">🎓</span>.  
-    Every story sparks imagination <span className="inline-block">💭</span> and brings a smile to every young reader’s face. Join us and start your adventure today! <span className="inline-block">🚀🌈</span>
-          </p>
-          <button className="mt-4 px-4 py-2 font-medium border rounded-full transition-all hover:bg-opacity-20 hover:bg-pink-400">
-            <Link href="/about" className="flex justify-center items-center gap-2">
-            <ShieldQuestion className="text-pink-600" />
-            <span>Know More</span>
-            </Link>
-          </button>
-        </div>
+       
       </div>
-
-      <Privacy />
     </div>
   );
 };

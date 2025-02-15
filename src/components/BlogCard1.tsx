@@ -46,7 +46,7 @@ const handleDelete = (id:string |undefined)=>{
       </p>
 
       <p className="text-md font-semibold max-h-8 min-h-8">
-        <span className="text-sm mr-2 text-pink-700 dark:text-white font-normal italic">
+        <span className="text-sm mr-2 text-blue-700 dark:text-white font-normal italic">
           Written By
         </span>
         {author}
@@ -60,12 +60,12 @@ const handleDelete = (id:string |undefined)=>{
         {/* Delete Button */}
         <button
           onClick={() => handleDelete(id)}
-          className="border-b-2 py-1 px-4 hover:border-pinke-800 hover:text-red-500 text-black tracking-wider dark:text-white dark:hover:text-red-500 text-sm"
+          className="border-b-2 py-1 px-4 hover:border-bluee-800 hover:text-red-500 text-black tracking-wider dark:text-white dark:hover:text-red-500 text-sm"
         >
           Delete Blog
         </button>
 
-        <span className="text-sm md:font-semibold text-pink-700 font-normal dark:text-white ">
+        <span className="text-sm md:font-semibold text-blue-700 font-normal dark:text-white ">
           Published on : {date}
         </span>
       </div>

@@ -24,7 +24,7 @@ const BlogList = () => {
 {blogs.length === 0 && (
       <div className="flex flex-col justify-center items-center gap-4 min-h-[165px]">
         <h2 className="text-2xl font-bold">No Blogs Found</h2>
-        <Link href="/input" className="bg-pink-600 py-2 px-4 rounded-lg text-white text-sm hover:bg-pink-800">
+        <Link href="/input" className="bg-blue-600 py-2 px-4 rounded-lg text-white text-sm hover:bg-blue-800">
           Create Blog
         </Link>
       </div>
@@ -45,7 +45,7 @@ const BlogList = () => {
           id={item.id}
         />
    <Link
-          className="bg-pink-600 py-2 h-fit rounded-b-lg text-white text-sm hover:bg-pink-800 text-center shadow-md shadow-pink-700"
+          className="bg-blue-600 py-2 h-fit rounded-b-lg text-white text-sm hover:bg-blue-800 text-center shadow-md shadow-blue-700"
           href={`/blogs/${item.id}`}
         >
           Read Blog

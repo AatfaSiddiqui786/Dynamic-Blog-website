@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/Header3";
-import Footer from "@/components/Footer3";
 import StoreProvider from "./reduxStore/StoreProvider";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,8 +19,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "kids stories Blog",
-  description: "developed by Aatfa siddiqui",
+  title: "Health & Fitness Blog",
+  description: "Developed by Rafiha Siddiqui",
 };
 
 export default function RootLayout({
@@ -37,18 +36,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}    
       >
         
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+       
             <StoreProvider>
-              <Header />
+              <Header/>
               {children}
-              <Footer />
+             <Footer/>
             </StoreProvider>
-          </ThemeProvider>
+   
         </body  >
       </html>
     </ClerkProvider>
