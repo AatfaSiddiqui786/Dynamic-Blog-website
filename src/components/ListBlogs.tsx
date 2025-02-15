@@ -8,7 +8,7 @@ interface CardInterface {
 
 const BlogCard = ({ author, title, description, image }: CardInterface) => {
   return (
-    <div className="max-w-sm rounded-lg shadow-lg bg-white border border-blue-200 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <div className="max-w-sm rounded-lg shadow-lg bg-white border border-pink-200 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
       <Image
         src={image}
         alt="Blog Image"
@@ -17,9 +17,9 @@ const BlogCard = ({ author, title, description, image }: CardInterface) => {
         className="object-cover w-full h-48"
       />
       <div className="p-4">
-        <h3 className="text-xl font-bold text-blue-800 mb-2">{title}</h3>
-        <p className="text-blue-600 text-sm mb-4">{description}</p>
-        <p className="text-sm font-medium text-blue-700">Author: {author}</p>
+        <h3 className="text-xl font-bold text-pink-800 mb-2">{title}</h3>
+        <p className="text-pink-600 text-sm mb-4">{description}</p>
+        <p className="text-sm font-medium text-pink-700">Author: {author}</p>
       </div>
     </div>
   );

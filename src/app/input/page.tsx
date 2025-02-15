@@ -72,7 +72,7 @@ const BlogInputCard =  () => {
 
     toast.success(
       <div className="flex flex-col justify-center items-start gap-1">
-        <div className="">Item added sucessfully!</div>
+        <div className="">Item added to cart successfully!</div>
         <Link
           className="pb-[2px] border-b-2 border-white"
           href="/blogs"
@@ -97,7 +97,7 @@ const BlogInputCard =  () => {
 
   return (
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
-      <h2 className="text-2xl font-bold text-blue-800 mb-4 text-center">
+      <h2 className="text-2xl font-bold text-pink-800 mb-4 text-center">
         Add Blog Post
       </h2>
       <form onSubmit={(e:FormEvent<HTMLFormElement>) => FormHandler(e)} className="space-y-4">
@@ -105,7 +105,7 @@ const BlogInputCard =  () => {
           ref={fileInputRef}
           type="file"
           accept="image/*"
-          className="w-full p-2 border dark:bg-blue-600 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 border dark:bg-pink-600 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
           onChange={(e) => LoadImage(e)}
           required
         />
@@ -113,14 +113,14 @@ const BlogInputCard =  () => {
         <input
           type="text"
           placeholder="Blog Title"
-          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 dark:bg-gray-600 focus:ring-blue-500"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 dark:bg-gray-600 focus:ring-pink-500"
           onChange={(e:React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           value={title}
           required
         />
         <textarea
           placeholder="Blog Description"
-          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 dark:bg-gray-600 focus:ring-blue-500 resize-none"
+          className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 dark:bg-gray-600 focus:ring-pink-500 resize-none"
           rows={4}
           onChange={(e:React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
           value={description}
@@ -129,7 +129,7 @@ const BlogInputCard =  () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
+          className="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors"
         >
           Add Blog
         </button>
